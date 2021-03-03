@@ -4,14 +4,13 @@ namespace Src\Routes;
 
 use Slim\Routing\RouteCollectorProxy;
 use Src\Controllers\UserController;
-use Src\Enums\MonoLoggers;
 use Src\Enums\Paths;
 
 
 function user_router(RouteCollectorProxy $group)
 {
-    # code...
 
+    # code...
 
 
     $group->group(

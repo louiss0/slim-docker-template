@@ -17,7 +17,7 @@ interface ISlimController
 
     public function getAll(Request $request,  Response $response);
     public function getOne(Response $response, int $id);
-    public function createOne(Response $response, int $id);
+    public function createOne(Response $response);
     public function updateOne(Response $response, int $id);
     public function deleteOne(Response $response, int $id);
 }

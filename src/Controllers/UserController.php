@@ -11,7 +11,6 @@ class UserController implements ISlimController
 {
 
 
-        
 
     public function getAll(ServerRequestInterface $request, ResponseInterface $response)
     {
@@ -20,8 +19,6 @@ class UserController implements ISlimController
 
 
         $body = $response->getBody();
-
-
 
 
 
@@ -39,7 +36,7 @@ class UserController implements ISlimController
     }
 
 
-    public function createOne(ResponseInterface $response, int $id)
+    public function createOne(ResponseInterface $response)
     {
     }
 

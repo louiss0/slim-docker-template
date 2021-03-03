@@ -1,6 +1,9 @@
 <?php
 
 use DI\Container;
+use Lcobucci\JWT\Configuration;
+use Lcobucci\JWT\Signer\Rsa\Sha256;
+use Lcobucci\JWT\Signer\Key\InMemory;
 use Monolog\Handler\FirePHPHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
@@ -75,7 +78,24 @@ $container->set(
 
 
 
+$container->set(
+    Configuration::class,
+    function (): Configuration {
+        # code...
 
+        $key = InMemory::plainText($_ENV["LCOUBUCCI_KEY"]);
+
+        $signer = new Sha256();
+
+        $config = Configuration::forSymmetricSigner(
+            $signer,
+            $key
+        );
+
+
+        return $config;
+    }
+);
 
 
 
